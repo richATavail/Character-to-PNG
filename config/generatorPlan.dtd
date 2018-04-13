@@ -1,0 +1,37 @@
+<!--
+  ~ generatorPlan.dtd
+  ~ Copyright © 2018, Richard Arriaga.
+  ~ All rights reserved.
+-->
+
+<!--
+    @author Rich Arriaga
+-->
+<!ELEMENT selections (target_directory,selection+)>
+    <!ELEMENT target_directory (#PCDATA)>
+    <!ELEMENT selection
+            (selection_name,
+                pixel_height,
+                pixel_width,
+                code_point_ranges,
+                colors,
+                fonts)>
+        <!ELEMENT selection_name (#PCDATA)>
+        <!ELEMENT pixel_height (#PCDATA)>
+        <!ELEMENT pixel_width (#PCDATA)>
+        <!ELEMENT code_point_ranges (range)+>
+        <!ELEMENT range (start,end)>
+            <!ELEMENT start (#PCDATA)>
+            <!ELEMENT end (#PCDATA)>
+        <!ELEMENT colors (color|color_name)+>
+            <!ELEMENT color_name (#PCDATA)>
+            <!ELEMENT color (red,blue,green,alpha)>
+                <!ELEMENT red (#PCDATA)>
+                <!ELEMENT blue (#PCDATA)>
+                <!ELEMENT green (#PCDATA)>
+                <!ELEMENT alpha (#PCDATA)>
+        <!ELEMENT fonts (font)+>
+            <!ELEMENT font (font_style,font_size,font_name)*>
+                <!ELEMENT font_name (#PCDATA)>
+                <!ELEMENT font_size (#PCDATA)>
+                <!ELEMENT font_style (#PCDATA)>
